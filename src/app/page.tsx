@@ -1,15 +1,16 @@
 "use client";
 
-import { navigation, favorites, footerNavigation } from "./data";
-import Header from "@/components/Header";
 import Link from "next/link";
+import { favorites } from "./data";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Example() {
   return (
     <div className="bg-white">
       {/* Mobile menu */}
       <Header />
-      <header className="relative overflow-hidden">
+      <div className="relative overflow-hidden">
         {/* Top navigation */}
 
         {/* Hero section */}
@@ -21,7 +22,8 @@ export default function Example() {
               </h1>
               <p className="mt-4 text-xl text-gray-500">
                 This year, our new summer collection will shelter you from the
-                harsh elements of a world that doesn't care if you live or die.
+                harsh elements of a world that doesn&apos;t care if you live or
+                die.
               </p>
             </div>
             <div>
@@ -91,18 +93,16 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
-
-                <Link
-                  href="/products/0"
-                  className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
-                >
-                  Shop Collection
+                <Link href="/products/0">
+                  <div className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">
+                    Shop Collection
+                  </div>
                 </Link>
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       <main>
         {/* Category section */}
@@ -116,7 +116,7 @@ export default function Example() {
                 Shop by Category
               </h2>
               <a
-                href="#"
+                href="/"
                 className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
               >
                 Browse all categories
@@ -138,7 +138,7 @@ export default function Example() {
                 <div className="flex items-end p-6">
                   <div>
                     <h3 className="font-semibold text-white">
-                      <a href="#">
+                      <a href="/products/0">
                         <span className="absolute inset-0" />
                         New Arrivals
                       </a>
@@ -186,7 +186,7 @@ export default function Example() {
                 <div className="flex items-end p-6 sm:absolute sm:inset-0">
                   <div>
                     <h3 className="font-semibold text-white">
-                      <a href="#">
+                      <a href="/">
                         <span className="absolute inset-0" />
                         Workspace
                       </a>
@@ -201,7 +201,7 @@ export default function Example() {
 
             <div className="mt-6 sm:hidden">
               <a
-                href="#"
+                href="/"
                 className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
               >
                 Browse all categories
@@ -233,13 +233,13 @@ export default function Example() {
                 Long-term thinking
               </h2>
               <p className="mt-3 text-xl text-white">
-                We're committed to responsible, sustainable, and ethical
+                We&apos;re committed to responsible, sustainable, and ethical
                 manufacturing. Our small-scale approach allows us to focus on
-                quality and reduce our impact. We're doing our best to delay the
-                inevitable heat-death of the universe.
+                quality and reduce our impact. We&apos;re doing our best to
+                delay the inevitable heat-death of the universe.
               </p>
               <a
-                href="#"
+                href="/"
                 className="mt-8 block w-full rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
               >
                 Read our story
@@ -259,7 +259,7 @@ export default function Example() {
                 Our Favorites
               </h2>
               <a
-                href="#"
+                href="/"
                 className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
               >
                 Browse all favorites
@@ -290,7 +290,7 @@ export default function Example() {
 
             <div className="mt-6 sm:hidden">
               <a
-                href="#"
+                href="/"
                 className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
               >
                 Browse all favorites
@@ -316,7 +316,7 @@ export default function Example() {
                       Up to 50% off.
                     </h2>
                     <div className="mt-6 text-base">
-                      <a href="#" className="font-semibold text-white">
+                      <a href="/" className="font-semibold text-white">
                         Shop the sale
                         <span aria-hidden="true"> &rarr;</span>
                       </a>
@@ -384,84 +384,7 @@ export default function Example() {
           </div>
         </section>
       </main>
-
-      <footer aria-labelledby="footer-heading" className="bg-white">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="py-20 xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-              {/* <div className="space-y-16 md:grid md:grid-cols-2 md:gap-8 md:space-y-0"> */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Shop</h3>
-                <ul role="list" className="mt-6 space-y-6">
-                  {footerNavigation.shop.map((item) => (
-                    <li key={item.name} className="text-sm">
-                      <a
-                        href={item.href}
-                        className="text-gray-500 hover:text-gray-600"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Company</h3>
-                <ul role="list" className="mt-6 space-y-6">
-                  {footerNavigation.company.map((item) => (
-                    <li key={item.name} className="text-sm">
-                      <a
-                        href={item.href}
-                        className="text-gray-500 hover:text-gray-600"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* </div> */}
-            </div>
-            <div className="mt-16 md:mt-16 xl:mt-0">
-              <h3 className="text-sm font-medium text-gray-900">
-                Sign up for our newsletter
-              </h3>
-              <p className="mt-6 text-sm text-gray-500">
-                The latest deals and savings, sent to your inbox weekly.
-              </p>
-              <form className="mt-2 flex sm:max-w-md">
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  type="text"
-                  autoComplete="email"
-                  required
-                  className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-indigo-500 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                />
-                <div className="ml-4 flex-shrink-0">
-                  <button
-                    type="submit"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Sign up
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-200 py-10">
-            <p className="text-sm text-gray-500">
-              Copyright &copy; 2021 Your Company, Inc.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

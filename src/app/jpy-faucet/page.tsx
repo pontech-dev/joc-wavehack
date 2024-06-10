@@ -49,7 +49,7 @@ export default function JPYFaucet() {
 
     const tx = await mintTo({
       contract,
-      to: account?.address!,
+      to: "0xB6Ac3Fe610d1A4af359FE8078d4c350AB95E812b",
       amount: amount,
     });
     console.log(tx, "tx");

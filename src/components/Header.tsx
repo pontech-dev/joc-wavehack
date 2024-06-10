@@ -1,5 +1,6 @@
 "use client";
 
+import { client } from "@/app/client";
 import {
   Dialog,
   DialogPanel,
@@ -22,6 +23,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useState, Fragment } from "react";
+import { ConnectButton } from "thirdweb/react";
 
 const navigation = {
   categories: [
@@ -289,20 +291,7 @@ export default function Header() {
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <a
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Sign in
-                    </a>
-                  </div>
-                  <div className="flow-root">
-                    <a
-                      href="#"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Create account
-                    </a>
+                    <ConnectButton client={client} locale="ja_JP" />
                   </div>
                 </div>
 
@@ -314,7 +303,7 @@ export default function Header() {
                       className="block h-auto w-5 flex-shrink-0"
                     />
                     <span className="ml-3 block text-base font-medium text-gray-900">
-                      CAD
+                      JPY
                     </span>
                     <span className="sr-only">, change currency</span>
                   </a>
@@ -479,19 +468,8 @@ export default function Header() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Sign in
-                  </a>
+                  <ConnectButton client={client} locale="ja_JP" />
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Create account
-                  </a>
                 </div>
 
                 <div className="hidden lg:ml-8 lg:flex">
@@ -500,11 +478,11 @@ export default function Header() {
                     className="flex items-center text-gray-700 hover:text-gray-800"
                   >
                     <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
+                      src="/logomark.webp"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
-                    <span className="ml-3 block text-sm font-medium">CAD</span>
+                    <span className="ml-3 block text-sm font-medium">JPY</span>
                     <span className="sr-only">, change currency</span>
                   </a>
                 </div>

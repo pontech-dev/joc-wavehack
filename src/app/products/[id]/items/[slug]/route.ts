@@ -4,6 +4,8 @@ import path from "path";
 export async function GET(request: Request, { params }: any) {
   const id = params.slug;
 
+  // TODO check if request user ownes the NFT for this id
+
   const buffer = await readFile(
     path.join(process.cwd(), "src/app/assets", "image.png")
   );
